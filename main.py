@@ -1,3 +1,5 @@
+from math import sqrt
+
 class NumberEvenError(Exception):
     def __init__(self):
         self.message = 'Найдено четное чисто'
@@ -55,7 +57,6 @@ def convert_str_to_num(string: str) -> None:
 
 
 def import_module(num: int) -> None:
-    from math import sqrt
     try: print(sqrt(num))
     except ValueError as ex: print(ex)
     except TypeError as ex: print(ex)
