@@ -31,7 +31,7 @@ def sum_list(lst: list|tuple) -> None:
     :return: None. Выводит результат на экран
     """
     try:
-        if len([num for num in lst if num != 0 and num % 2 == 0]): raise NumberEvenError()
+        if len([num for num in lst if num % 2 == 0]): raise NumberEvenError()
         elif len([num for num in lst if num < 0]): raise NumberNegativeError()
     except NumberEvenError as ex: print(ex)
     except NumberNegativeError as ex: print(ex)
