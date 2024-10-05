@@ -57,6 +57,10 @@ def convert_str_to_num(string: str) -> None:
 
 
 def import_module(num: int) -> None:
+    """Функция принимает число и вычисляет квадратный корень этого числа
+    :param num: чисто в квадрате
+    :return: None. Выводит результат на экран
+    """
     try: print(sqrt(num))
     except ValueError as ex: print(ex)
     except TypeError as ex: print(ex)
