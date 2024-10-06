@@ -54,7 +54,6 @@ def convert_str_to_num(string: str) -> None:
     try: print(float(string))
     except ValueError as ex: print(ex)
 
-
 def import_module(num: int) -> None:
     """(6)Функция принимает число и вычисляет квадратный корень этого числа
     :param num: чисто в квадрате
