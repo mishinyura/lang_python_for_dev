@@ -15,7 +15,7 @@ class NumberNegativeError(Exception):
         return self.message
 
 def processing_division_zero_and_receiving_str(f_num: int, s_num: int) -> None:
-    """Функция принимает два числа от пользователя и выводит результат их деления
+    """(1-2)Функция принимает два числа от пользователя и выводит результат их деления
     :param f_num: int делимое
     :param s_num: int делитель
     :return: None. Выводит результат на экран
@@ -26,7 +26,7 @@ def processing_division_zero_and_receiving_str(f_num: int, s_num: int) -> None:
 
 # @timer
 def sum_list(lst: list|tuple) -> None:
-    """Функция вычисляет сумму списка целых чисел.
+    """(3)Функция вычисляет сумму списка целых чисел.
     :param lst: список или кортеж
     :return: None. Выводит результат на экран
     """
@@ -38,7 +38,7 @@ def sum_list(lst: list|tuple) -> None:
     else: print(sum(lst))
 
 def processing_index_error(index: int) -> None:
-    """Функция принимает от пользователя индекс элемента списка и выводит
+    """(4)Функция принимает от пользователя индекс элемента списка и выводит
     значение этого элемента.
     :param index: int  целой число как отрицательное, так и положительное
     :return: None. Выводит результат на экран
@@ -48,7 +48,7 @@ def processing_index_error(index: int) -> None:
     except IndexError as ex: print(ex)
 
 def convert_str_to_num(string: str) -> None:
-    """Функция принимает от пользователя строку и преобразует её в число с плавающей точкой
+    """(5)Функция принимает от пользователя строку и преобразует её в число с плавающей точкой
     :param string: строка, которуб нужно преобразовать
     :return: None. Выводит результат на экран
     """
@@ -57,7 +57,7 @@ def convert_str_to_num(string: str) -> None:
 
 
 def import_module(num: int) -> None:
-    """Функция принимает число и вычисляет квадратный корень этого числа
+    """(6)Функция принимает число и вычисляет квадратный корень этого числа
     :param num: чисто в квадрате
     :return: None. Выводит результат на экран
     """
