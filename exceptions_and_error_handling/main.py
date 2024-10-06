@@ -62,6 +62,7 @@ def import_module(num: int) -> None:
     try: print(sqrt(num))
     except ValueError as ex: print(ex)
     except TypeError as ex: print(ex)
+    except NameError as ex: print(ex)
 
 
 def main():
