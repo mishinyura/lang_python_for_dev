@@ -24,7 +24,6 @@ def processing_division_zero_and_receiving_str(f_num: int, s_num: int) -> None:
     except ZeroDivisionError as ex: print(ex)
     except TypeError as ex: print(ex)
 
-# @timer
 def sum_list(lst: list|tuple) -> None:
     """(3)Функция вычисляет сумму списка целых чисел.
     :param lst: список или кортеж
