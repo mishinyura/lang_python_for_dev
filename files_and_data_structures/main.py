@@ -15,16 +15,23 @@ def sum_order(path: str) -> int:
         result = sum(map(int, [i.strip().split('\t')[2] for i in file.readlines()]))
         return result
 
+
 @timer
 def sum_order2(path: str) -> int:
     with open(path, 'r', encoding='utf-8') as file:
         result = sum(list(map(int, re.findall(r'\d+\n', file.read()))))
         return result
 
+@timer
+def counter_words(path: str) -> int:
+    with open(path, 'r', encoding='utf-8') as file:
+        return len(re.findall(r'\w+.?', file.read()))
+
 def main():
     # write_copy_file('data/source.txt', 'results/destination.txt')
-    print(sum_order('data/prices.txt'))
-    print(sum_order2('data/prices.txt'))
+    # print(sum_order('data/prices.txt'))
+    # print(sum_order2('data/prices.txt'))
+    counter_words('data/text_file.txt')
 
 if __name__ == '__main__':
     main()
