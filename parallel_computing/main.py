@@ -1,5 +1,6 @@
 from threading import Thread
 import asyncio
+from multiprocessing import Process, Queue
 from time import sleep
 
 
@@ -38,11 +39,32 @@ def run(func_name):
     thread_1.start()
     thread_2.start()
 
+# def fact(num: int, res) -> int:
+#     if num == 1:
+#         res.put(1)
+#         return 1
+#     result = fact(num - 1, res) * num
+#
+#     res.put(result)
+#     return result
+
+def fact(num: int, res):
+    fact = 1
+    for i in range(1, num + 1):
+        fact *= i
+        if i == num:
+            res.put(fact)
 
 def main():
     run('count')
     run('timer')
     asyncio.run(async_square_num())
+    for i in range(1, 11):
+        res = Queue()
+        process = Process(target=fact, args=(i, res))
+        process.start()
+        print(f'Факториал числа {i} = {res.get()}')
+
 
 if __name__ == '__main__':
     main()
