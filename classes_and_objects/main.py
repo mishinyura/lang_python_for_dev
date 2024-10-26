@@ -1,30 +1,30 @@
 class Product:
-    def __init__(self, name: str, price: float, stock: int):
+    def __init__(self, name: str, price: float, stock: int) -> None:
         self.name = name
         self.price = price
         self._stock = stock
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.name
 
     @property
-    def stock(self):
+    def stock(self) -> int:
         return self._stock
 
     @stock.setter
-    def stock(self, count):
+    def stock(self, count: int) -> None:
         self._stock = count
 
-    def update_stock(self, quantity: int):
+    def update_stock(self, quantity: int) -> None:
         if self.stock + quantity < 0:
             raise Exception('Недостаточно товара на складе')
         self.stock += quantity
 
 class Order:
-    def __init__(self):
+    def __init__(self) -> None:
         self.order = {}
 
-    def add_product(self, product: Product, quantity: int):
+    def add_product(self, product: Product, quantity: int) -> None:
         try:
             product.update_stock(-quantity)
         except Exception as ex:
@@ -39,8 +39,9 @@ class Order:
             self.order[product] -= quantity
         product.update_stock(quantity)
 
-    def calculate_total(self):
-        return sum(product.price * amount for product, amount in self.order.items())
+    def calculate_total(self) -> float:
+        total_lst = [product.price * amount for product, amount in self.order.items()]
+        return round(float(sum(total_lst)), 2)
 
 
 
@@ -54,7 +55,7 @@ class Store:
     def list_products(self) -> None:
         print(self.products)
 
-    def create_order(self):
+    def create_order(self) -> Order:
         order = Order()
         return order
 
@@ -71,7 +72,7 @@ def info(product: Product, order: Order, action: str) -> None:
         order.calculate_total()
     ))
 
-def main():
+def main() -> None:
     # Создаем магазин
     store = Store()
 
