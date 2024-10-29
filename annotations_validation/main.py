@@ -36,10 +36,8 @@ def main():
     while True:
         print('Для продоления, введите ваши данные:')
         try:
-            # name = input('Имя: ')
-            # email = input('Email: ')
-            name = 'Yura'
-            email = 'test@ya.ru'
+            name = input('Имя: ')
+            email = input('Email: ')
         except ValueError as ex:
             print(f'Ошибка: {ex}')
         else:

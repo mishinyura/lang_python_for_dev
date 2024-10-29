@@ -27,9 +27,7 @@ class User(BaseModel):
 
     @field_validator('email')
     def email_valid(cls, data: str):
-        domain_zone = ['ru', 'com', 'net', 'su']
-        is_zone = re.findall(r'\.(\w+)\Z', data)[0] in domain_zone
-        if '@' not in data or not is_zone:
+        if '@' not in data:
             raise ValueError('Email is not correct')
         return data
 
