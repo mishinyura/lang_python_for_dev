@@ -8,7 +8,7 @@ def create_book():
         "author": input('Автор: '),
         "year": int(input('Год выпуска: ')),
         "available": True,
-        "categories": [] if input('Перечислите категории книги через запятую: ').split(', ') else []
+        "categories": input('Перечислите категории книги через запятую: ').split(', ')
     }
     book = Book(**data)
     return book
@@ -38,10 +38,10 @@ def main():
         try:
             name = input('Имя: ')
             email = input('Email: ')
+            user = User(name=name, email=email, membership_id='test')
         except ValueError as ex:
             print(f'Ошибка: {ex}')
         else:
-            user = User(name=name, email=email, membership_id='test')
             books = book1, book2, book3, book4
             for book in books:
                 obj = Book(**book)
